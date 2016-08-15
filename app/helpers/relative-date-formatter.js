@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import moment from 'moment';
 
-export function relativeDateFormatter( [date], { relative } ) {
+export function relativeDateFormatter( [date], { relative=true }={} ) {
   const old = moment().diff(date, 'days');
   const time = old ? formatDate(date) : formatTime(date);
   let result = formatTime(date);
