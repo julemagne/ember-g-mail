@@ -13,9 +13,12 @@ test('shows relative time for dates that are less than 24 hours old', function(a
   assert.ok(actual, '1:00 PM (1 hour ago)');
 });
 
-// test('shows 1 day ago', function(assert) {
-//   assert.ok(true);
-// });
+test('shows 1 day ago', function(assert) {
+	const laterDate = moment(date).add(1, 'day').toDate();
+	timekeeper.freeze(laterDate);
+	const actual = relativeDateFormatter([date], { relative: true });
+	assert.equal(actual, 'Jul 27 (1 day ago)');	
+});
 
 // test('shows formatted date for dates that are older than 24 hours old', function(assert) {
 //   assert.ok(true);
