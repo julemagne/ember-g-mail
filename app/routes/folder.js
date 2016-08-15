@@ -9,7 +9,8 @@ export default Ember.Route.extend({
 				to:'dev@me.com',
 				subject:'Opportunity',
 				body:'Hello I have a job for you :)',
-				sentAt: new Date()
+				sentAt: new Date(),
+				readDate: null
 			},
 			{
 				id: 2,
@@ -17,7 +18,8 @@ export default Ember.Route.extend({
 				to:'dev@me.com',
 				subject:'New Opportunity!!!',
 				body:'Hello, I have a BETTER job for you! :)',
-				sentAt: new Date()
+				sentAt: new Date(),
+				readDate: null
 			}
 		];
 	}
