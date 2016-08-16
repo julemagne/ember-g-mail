@@ -7,7 +7,9 @@
 	  	{{/rl-dropdown-toggle}}
 		    {{#rl-dropdown tagName="ul" class="dropdown-menu" closeOnChildClick=true}}
 		    <li>
-		      <a href="#">{{fa-icon "trash"}} Delete</a>
+		      <a {{ action "trashBulk" }}>
+		      	{{fa-icon "trash"}} Delete
+		      </a>
 		    </li>
 		  {{/rl-dropdown}}
 	  {{/rl-dropdown-container}}
@@ -18,10 +20,19 @@
 <table class="table table-inbox table-hover">
   <tbody>
     {{#each model as |email|}}
-      <tr class="{{if email.readDate 'read' 'unread'}}" {{action "showEmail" email}}>
-        <td class="view-message dont-show">{{email.from}}</td>
-        <td class="view-message">{{email.subject}}</td>
-        <td class="view-message text-right">{{relative-date-formatter email.sentAt relative=false}}</td>
+      <tr class="{{if email.readDate 'read' 'unread'}}">
+	      <td class="inbox-small-cells">
+					{{input type="checkbox" checked=email.checked}}
+				</td>
+        <td {{action "showEmail" email}} class="view-message dont-show">
+        	{{email.from}}
+        </td>
+        <td {{action "showEmail" email}} class="view-message">
+        	{{email.subject}}
+        </td>
+        <td {{action "showEmail" email}} class="view-message text-right">
+        	{{relative-date-formatter email.sentAt relative=false}}
+        </td>
       </tr>
     {{/each}}
   </tbody>
