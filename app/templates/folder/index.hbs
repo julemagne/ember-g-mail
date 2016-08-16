@@ -22,8 +22,12 @@
         <td class="inbox-small-cells">
           {{input type="checkbox" checked=email.checked }}
         </td>
-        <td>
-        	{{fa-icon "star"}}
+        <td class="inbox-small-cells" {{action "starEmail" email}}>
+          {{#if email.starred}}
+            {{fa-icon "star" class="inbox-started"}}
+          {{else}}
+            {{fa-icon "star"}}
+          {{/if}}
         </td>
         <td class="view-message dont-show" {{action "showEmail" email}}>
         	{{email.from}}

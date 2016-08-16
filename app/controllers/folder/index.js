@@ -16,6 +16,9 @@ export default Ember.Controller.extend({
         set(result, 'checked', false);
       });
       this.transitionToRoute('application');
+    },
+    starEmail(email) {
+      set(email, 'starred', !get(email, 'starred'));
     }
   }
 });

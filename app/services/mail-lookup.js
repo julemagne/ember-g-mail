@@ -10,7 +10,8 @@ const fixtures = [
 		body:'Hello I have a job for you :)',
 		sentAt: new Date(),
 		readDate: null,
-		trashedDate: null
+		trashedDate: null,
+		starred: null
 	},
 	{
 		id: 2,
@@ -20,7 +21,8 @@ const fixtures = [
 		body:'Hello, I have a BETTER job for you! :)',
 		sentAt: new Date(),
 		readDate: null,
-		trashedDate: null
+		trashedDate: null,
+		starred: null
 	}
 ];
 
