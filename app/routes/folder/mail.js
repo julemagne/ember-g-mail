@@ -10,8 +10,12 @@ export default Ember.Route.extend({
     return { mailId: model.id };
   },
     afterModel(model) {
-    // Ember.set(model, 'readDate', new Date()); // same
-    // model.set('readDate', new Date();) // same
     set(model, 'readDate', new Date());
+  },
+  actions: {
+    moveToTrash(model) {
+      set(model, 'trashedDate', new Date());
+      this.transitionTo('application');
+    }
   }
 });

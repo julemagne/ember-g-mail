@@ -1,5 +1,13 @@
 <div class="mail-content">
   <h2>{{model.subject}}</h2>
+  <div class="mail-option">
+  <div class="btn-group">
+    <a {{action (route-action 'moveToTrash' model)}} href="#" class="btn mini tooltips" aria-expanded="false">
+      {{ fa-icon "trash" }}
+    </a>
+  </div>
+</div>
+<hr class="options-line"/>
   <hr/>
   <div class="mail-header">
     <div class="tile-icon">{{fa-icon "user"}}</div>
