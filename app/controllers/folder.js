@@ -3,7 +3,8 @@ import Ember from 'ember';
 const { Controller } = Ember;
 
 export default Controller.extend({
-  mailLookup: Ember.inject.service(),
-  inboxCount: Ember.computed.alias('mailLookup.inboxCount'),
-  trashCount: Ember.computed.alias('mailLookup.trashCount')
+  mailCounts: Ember.inject.service(),
+  inboxCount: Ember.computed.alias('mailCounts.inboxCount'),
+  trashCount: Ember.computed.alias('mailCounts.trashCount'),
+  starredCount: Ember.computed.alias('mailCounts.starredCount')
 });

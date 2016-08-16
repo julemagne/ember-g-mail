@@ -3,6 +3,8 @@ import Ember from 'ember';
 const { set } = Ember;
 
 export default Ember.Route.extend({
+  mailLookup: Ember.inject.service(),
+  tagging: Ember.inject.service(),
   model({ mailId }) {
     return this.store.find('email', mailId);
   },
@@ -12,10 +14,7 @@ export default Ember.Route.extend({
   serialize(model) {
     return { mailId: model.id };
   },
-  actions:  {
-    moveToTrash(email) {
-      set(email, 'trashedDate', new Date());
-      this.transitionTo('application');
-    }
+  starEmail(email) {
+    get(this, 'tagging').addTag('starred', email);
   }
 });
