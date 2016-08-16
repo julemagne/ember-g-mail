@@ -22,9 +22,18 @@
         <td class="inbox-small-cells">
           {{input type="checkbox" checked=email.checked }}
         </td>
-        <td class="view-message dont-show" {{action "showEmail" email}}>{{email.from}}</td>
-        <td class="view-message" {{action "showEmail" email}}>{{email.subject}}</td>
-        <td class="view-message text-right" {{action "showEmail" email}}>{{relative-date-formatter email.sentAt relative=false}}</td>
+        <td>
+        	{{fa-icon "star"}}
+        </td>
+        <td class="view-message dont-show" {{action "showEmail" email}}>
+        	{{email.from}}
+        </td>
+        <td class="view-message" {{action "showEmail" email}}>
+        	{{email.subject}}
+        </td>
+        <td class="view-message text-right" {{action "showEmail" email}}>
+        	{{relative-date-formatter email.sentAt relative=false}}
+        </td>
       </tr>
     {{/each}}
   </tbody>
