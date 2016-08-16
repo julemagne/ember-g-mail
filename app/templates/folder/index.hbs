@@ -1,3 +1,20 @@
+{{!-- Move to drop down --}}
+{{#if (gt model.length 0)}}
+	<div class="mail-option">
+	  {{#rl-dropdown-container class="btn-group"}}
+	    {{#rl-dropdown-toggle class="btn btn-default"}}
+	    Move to {{fa-icon 'fa-angle-down'}}
+	  	{{/rl-dropdown-toggle}}
+		    {{#rl-dropdown tagName="ul" class="dropdown-menu" closeOnChildClick=true}}
+		    <li>
+		      <a href="#">{{fa-icon "trash"}} Delete</a>
+		    </li>
+		  {{/rl-dropdown}}
+	  {{/rl-dropdown-container}}
+	</div>
+{{/if}}
+
+{{!-- Email list --}}
 <table class="table table-inbox table-hover">
   <tbody>
     {{#each model as |email|}}
