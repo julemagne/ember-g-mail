@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-const { get, set } = Ember;
+const { get } = Ember;
 
 export default Ember.Controller.extend({
   mailLookup: Ember.inject.service(),
@@ -11,14 +11,10 @@ export default Ember.Controller.extend({
     },
     trashBulk() {
       const results = get(this, 'model').filter(i => get(i, 'checked'));
-      results.forEach(result => {
-        set(result, 'trashedDate', new Date());
-        set(result, 'checked', false);
-      });
-      this.transitionToRoute('application');
+      get(this, 'mailLookup').removeItems(results);
     },
     starEmail(email) {
-      set(email, 'starred', !get(email, 'starred'));
+      get(this, 'mailLookup').addTag('starred', email);
     }
   }
 });

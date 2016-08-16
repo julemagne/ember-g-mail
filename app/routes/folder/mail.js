@@ -4,7 +4,7 @@ const { set } = Ember;
 
 export default Ember.Route.extend({
   model({ mailId }) {
-    return this.modelFor('folder')[mailId-1];
+    return this.store.find('email', mailId);
   },
   afterModel(model) {
     set(model, 'readDate', new Date());

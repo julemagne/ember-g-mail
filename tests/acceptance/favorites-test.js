@@ -7,6 +7,7 @@ moduleForAcceptance('Acceptance | favorites');
 
 // make collection of emails and verb star
 test('User favorites email from inbox', function(assert) {
+	server.create('email', { tags: [] });
   folderPage.visit();
   folderPage.emails(0).star();
 
