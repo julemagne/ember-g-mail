@@ -4,6 +4,9 @@
       <div class="user-head">
       </div>
       <div class="inbox-body">
+        <a href="#myModal" title="Compose" {{ action (route-action "toggleCompose") }}class="btn btn-compose">
+          Compose
+        </a>
       </div>
       <ul class="inbox-nav inbox-divider">
         {{#link-to 'folder' 'inbox' tagName='li'}}
@@ -13,10 +16,22 @@
             {{#if inboxCount}}<span class="label label-success pull-right">{{inboxCount}}</span>{{/if}}
           {{/link-to}}
         {{/link-to}}
+        {{#link-to 'folder' 'sent' tagName="li"}}
+          {{#link-to 'folder' 'sent'}}
+            {{fa-icon "envelope"}}
+            Sent {{#if sentCount}}<span class="label label-success pull-right">{{sentCount}}</span>{{/if}}
+          {{/link-to}}
+        {{/link-to}}
         {{#link-to 'folder' 'trash' tagName='li'}}
           {{#link-to 'folder' 'trash'}}
             {{fa-icon "trash"}} Trash 
             {{#if trashCount}}<span class="label label-success pull-right">{{trashCount}}</span>{{/if}}
+          {{/link-to}}
+        {{/link-to}}
+        {{#link-to 'folder' 'starred' tagName="li"}}
+          {{#link-to 'folder' 'starred'}}
+            {{fa-icon "star"}}
+            Starred {{#if starredCount}}<span class="label label-success pull-right">{{starredCount}}</span>{{/if}}
           {{/link-to}}
         {{/link-to}}
       </ul>

@@ -19,4 +19,7 @@ export default DS.Model.extend({
   trashed: Ember.computed('tags.[]', function() {
     return get(this, 'tags').contains('trashed');
   }),
+  sent: Ember.computed('tags.[]', function() {
+    return get(this, 'tags').contains('sent');
+  }),
 });

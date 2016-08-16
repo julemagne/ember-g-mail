@@ -6,5 +6,6 @@ export default Controller.extend({
   mailCounts: Ember.inject.service(),
   inboxCount: Ember.computed.alias('mailCounts.inboxCount'),
   trashCount: Ember.computed.alias('mailCounts.trashCount'),
-  starredCount: Ember.computed.alias('mailCounts.starredCount')
+  starredCount: Ember.computed.alias('mailCounts.starredCount'),
+  sentCount: Ember.computed.alias('mailCounts.sentCount')
 });
