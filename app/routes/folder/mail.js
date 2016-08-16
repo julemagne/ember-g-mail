@@ -6,15 +6,15 @@ export default Ember.Route.extend({
   model({ mailId }) {
     return this.modelFor('folder')[mailId-1];
   },
+  afterModel(model) {
+    set(model, 'readDate', new Date());
+  },
   serialize(model) {
     return { mailId: model.id };
   },
-    afterModel(model) {
-    set(model, 'readDate', new Date());
-  },
-  actions: {
-    moveToTrash(model) {
-      set(model, 'trashedDate', new Date());
+  actions:  {
+    moveToTrash(email) {
+      set(email, 'trashedDate', new Date());
       this.transitionTo('application');
     }
   }
