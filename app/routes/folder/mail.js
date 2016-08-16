@@ -9,7 +9,7 @@ export default Ember.Route.extend({
     return this.store.find('email', mailId);
   },
   afterModel(model) {
-    set(model, 'readDate', new Date());
+    return this.get('tagging').addTag(model, 'read');
   },
   serialize(model) {
     return { mailId: model.id };
