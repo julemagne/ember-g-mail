@@ -19,19 +19,19 @@
         {{#link-to 'folder' 'sent' tagName="li"}}
           {{#link-to 'folder' 'sent'}}
             {{fa-icon "envelope"}}
-            Sent {{#if sentCount}}<span class="label label-success pull-right">{{sentCount}}</span>{{/if}}
+            Sent {{#if sentCount}}<span class="label label-info pull-right">{{sentCount}}</span>{{/if}}
           {{/link-to}}
         {{/link-to}}
         {{#link-to 'folder' 'trash' tagName='li'}}
           {{#link-to 'folder' 'trash'}}
             {{fa-icon "trash"}} Trash 
-            {{#if trashCount}}<span class="label label-success pull-right">{{trashCount}}</span>{{/if}}
+            {{#if trashCount}}<span class="label label-danger pull-right">{{trashCount}}</span>{{/if}}
           {{/link-to}}
         {{/link-to}}
         {{#link-to 'folder' 'starred' tagName="li"}}
           {{#link-to 'folder' 'starred'}}
             {{fa-icon "star"}}
-            Starred {{#if starredCount}}<span class="label label-success pull-right">{{starredCount}}</span>{{/if}}
+            Starred {{#if starredCount}}<span class="label label-warning pull-right">{{starredCount}}</span>{{/if}}
           {{/link-to}}
         {{/link-to}}
       </ul>
